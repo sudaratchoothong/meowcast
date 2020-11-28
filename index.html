@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>MEOWCAST</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" href="/css/css/onsenui.css">
+    <link rel="stylesheet" href="/css/css/onsen-css-components.min.css">
+    <link rel="stylesheet" href="/css/css/login.css">
+</head>
+
+<body>
+    <div class="container text-center" style="margin-top: 100px">
+        <div class="text-center Comfortaa">
+            <img src="img/logo-meowcast.png" logo " width="50% " alt=" " srcset=" ">
+            <div class="meowflix ">Meow Cast</div>
+            <div class="form-group ">
+                <button type="button " class="btngo btn-lg btn-block " id="getstart ">GET START</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase -->
+    <script src="lib/onsenui.min.js "></script>
+    <script src="lib/jquery-3.5.1.min.js "></script>
+    <script>
+        document.getElementById('getstart').onclick = function() {
+            window.location.href = 'meowcast.html'
+        }
+    </script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js')
+                    .then((reg) => {
+                        console.log('Service worker registered.', reg);
+                    });
+            });
+        }
+    </script>
+</body>
