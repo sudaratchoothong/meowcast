@@ -35,6 +35,31 @@ function openPlaylist(id) {
   document.querySelector('#navigator').pushPage('playlist.html');
 }
 
+function openPlaylist2(id) {
+  playlist = document.querySelector('#'+id + "_name").innerHTML;
+  document.querySelector('#navigator').pushPage('playlist2.html');
+}
+
+function openPlaylist3(id) {
+  playlist = document.querySelector('#'+id + "_name").innerHTML;
+  document.querySelector('#navigator').pushPage('playlist3.html');
+}
+
+function openPlaylist4(id) {
+  playlist = document.querySelector('#'+id + "_name").innerHTML;
+  document.querySelector('#navigator').pushPage('playlist4.html');
+}
+
+function openPlaylist5(id) {
+  playlist = document.querySelector('#'+id + "_name").innerHTML;
+  document.querySelector('#navigator').pushPage('playlist5.html');
+}
+
+function openPlaylist6(id) {
+  playlist = document.querySelector('#'+id + "_name").innerHTML;
+  document.querySelector('#navigator').pushPage('playlist6.html');
+}
+
  // The shuffle_play is used to display the toast on the bottom of the screen
 
 function shuffle_play() {
@@ -48,10 +73,10 @@ function shuffle_play() {
 function openPlayScreen() {
   document.querySelector('#navigator').pushPage('play.html', { animation: "lift" });
 }
-
 // Used to togle the play/paused icon on the play screen and the toast on the playlist page
 
 function play_toggle(id)　{
   document.getElementById(id).classList.toggle("fa-pause-circle-o");
   document.getElementById(id).classList.toggle("fa-play-circle-o"); 
 }
+

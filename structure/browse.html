@@ -1,8 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
 <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
 <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
 <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
 <link rel="stylesheet" href="browse.css">
 <script src="browse.js"></script>
+<script src="/structure/add.js"></script>
+</head>
+<body>
 <ons-navigator id="navigator" page="browse.html"></ons-navigator>
 
 <!-- The Browsing Page -->
@@ -52,7 +58,7 @@
               </figure>
             </div>
           </ons-col>
-          <ons-col modifier="nodivider" id="Category_2" onclick="openPlaylist(this.id)">
+          <ons-col modifier="nodivider" id="Category_2" onclick="openPlaylist2(this.id)">
             <div class="category_wrapper">
               <figure class="category_thumbnail">
                 <ons-icon icon="fa-grin-tears"></ons-icon>
@@ -62,7 +68,7 @@
           </ons-col>
         </ons-row>
         <ons-row class="category">  
-          <ons-col modifier="nodivider" id="Category_3" onclick="openPlaylist(this.id)">
+          <ons-col modifier="nodivider" id="Category_3" onclick="openPlaylist3(this.id)">
             <div class="category_wrapper">
               <figure class="category_thumbnail">
                 <ons-icon icon="fa-napster"></ons-icon>
@@ -70,7 +76,7 @@
               </figure>
             </div>
           </ons-col>
-          <ons-col modifier="nodivider" id="Category_4" onclick="openPlaylist(this.id)">
+          <ons-col modifier="nodivider" id="Category_4" onclick="openPlaylist4(this.id)">
             <div class="category_wrapper">
               <figure class="category_thumbnail">
                 <ons-icon icon="fa-user-graduate"></ons-icon>
@@ -80,7 +86,7 @@
           </ons-col>
         </ons-row>
         <ons-row class="category">    
-          <ons-col modifier="nodivider" id="Category_5" onclick="openPlaylist(this.id)">
+          <ons-col modifier="nodivider" id="Category_5" onclick="openPlaylist5(this.id)">
             <div class="category_wrapper">
               <figure class="category_thumbnail">
                 <ons-icon icon="fa-briefcase"></ons-icon>
@@ -88,65 +94,11 @@
               </figure>
             </div>
           </ons-col>
-          <ons-col modifier="nodivider" id="Category_6" onclick="openPlaylist(this.id)">
+          <ons-col modifier="nodivider" id="Category_6" onclick="openPlaylist6(this.id)">
             <div class="category_wrapper">
               <figure class="category_thumbnail">
                 <ons-icon icon="fa-user-md"></ons-icon>
                 <div class="category_title" id="Category_6_name">Health</div>
-              </figure>
-            </div>
-          </ons-col>
-        </ons-row>
-        <ons-row class="category">    
-          <ons-col modifier="nodivider" id="Category_7" onclick="openPlaylist(this.id)">
-            <div class="category_wrapper">
-              <figure class="category_thumbnail">
-                <ons-icon icon="fa-baby"></ons-icon>
-                <div class="category_title" id="Category_7_name">Kids And Family</div>
-              </figure>
-            </div>
-          </ons-col>
-          <ons-col modifier="nodivider" id="Category_8" onclick="openPlaylist(this.id)">
-            <div class="category_wrapper">
-              <figure class="category_thumbnail">
-                <ons-icon icon="fa-music"></ons-icon>
-                <div class="category_title" id="Category_8_name">Music</div>
-              </figure>
-            </div>
-          </ons-col>
-        </ons-row>
-        <ons-row class="category">    
-          <ons-col modifier="nodivider" id="Category_9" onclick="openPlaylist(this.id)">
-            <div class="category_wrapper">
-              <figure class="category_thumbnail">
-                <ons-icon icon="fa-cloud-sun-rain"></ons-icon>
-                <div class="category_title" id="Category_9_name">News</div>
-              </figure>
-            </div>
-          </ons-col>
-          <ons-col modifier="nodivider" id="Category_10" onclick="openPlaylist(this.id)">
-            <div class="category_wrapper">
-              <figure class="category_thumbnail">
-                <ons-icon icon="fa-dharmachakra"></ons-icon>
-                <div class="category_title" id="Category_10_name">Religion And Spirituality</div>
-              </figure>
-            </div>
-          </ons-col>
-        </ons-row>
-        <ons-row class="category">    
-          <ons-col modifier="nodivider" id="Category_11" onclick="openPlaylist(this.id)">
-            <div class="category_wrapper">
-              <figure class="category_thumbnail">
-                <ons-icon icon="fa-flask"></ons-icon>
-                <div class="category_title" id="Category_11_name">Science</div>
-              </figure>
-            </div>
-          </ons-col>
-          <ons-col modifier="nodivider" id="Category_12" onclick="openPlaylist(this.id)">
-            <div class="category_wrapper">
-              <figure class="category_thumbnail">
-                <ons-icon icon="fa-users"></ons-icon>
-                <div class="category_title" id="Category_12_name">Society And Culture</div>
               </figure>
             </div>
           </ons-col>
@@ -185,6 +137,7 @@
               <div class="playlist_info">1,023 FOLLOWERS・BY UNKNOWN AUTHOR</div>
             </div>
           </ons-carousel-item>
+          
           <ons-carousel-item>
             <div>
               <div class="playlist_description">
@@ -243,6 +196,9 @@
       <div onclick="openPlayScreen()"><ons-icon size="20px" style="margin-right: 10px" icon="fa-angle-up"></ons-icon> Unknown Artist - Track 01 </div>
       <button><ons-icon id="play_icon" size="20px" style="color: white;" icon="fa-play-circle-o" onclick="play_toggle(this.id)"></ons-icon></button>
     </ons-toast>
+
+    
+
   </ons-page>
 </template>
 
@@ -298,3 +254,457 @@
 
   </ons-page>
 </template>
+
+
+<!-- Comedy Playlist -->
+<template id="playlist2.html">
+  <ons-page id="playlist-page">
+    <ons-toolbar modifier="transparent">
+      <div class="left"><ons-back-button></ons-back-button></div>
+      <div class="right">
+        <ons-toolbar-button>
+          <ons-icon style="color: white" icon="ion-ios-more,material:ion-android-more-vertical"></ons-icon>
+        </ons-toolbar-button>
+      </div>
+    </ons-toolbar>
+
+    <div class="content" style="text-align: center;">
+      <div class="playlist_content">
+        <ons-carousel class="carousel" swipeable auto-scroll id="carousel">
+          <ons-carousel-item>
+            <div>
+              <figure>
+                <img class="playlist_thumbnail" src="" >
+                <div class="playlist_title" id="playlist_title">Classical</div>
+              </figure>
+              <div>
+                <div class="playlist_follow">FOLLOW</div>
+              </div>
+              <div class="playlist_info">2000 FOLLOWERS・BY UNKNOWN AUTHOR</div>
+            </div>
+          </ons-carousel-item>
+          
+          <ons-carousel-item>
+            <div>
+              <div class="playlist_description">
+                Though the author is unknown, this playlist offers the best music can offer, from relaxing tracks to tracks that will make you get on your fit and jump as much as you can! Enjoy ^_^
+              </div>
+              <div>
+                <div style="font-size: 14px; margin-bottom: 10px;">Created by</div>
+                <div><ons-icon icon="fa-user-circle" size="20px" style="margin-bottom: 10px;"></ons-icon></div>
+                <div class="playlist_username">Unknown</div>
+              </div>
+              <div style="font-size: 14px">
+                <div style="left: 25px; bottom: 45px; position: absolute;"><ons-icon icon="fa-calendar-plus-o"></ons-icon> 2017/06/20</div>
+                <div style="right: 25px; bottom: 45px; position: absolute;"><ons-icon icon="fa-clock-o"></ons-icon> 30 min</div>
+              </div>
+            </div>  
+          </ons-carousel-item>
+          <div class="cover-label center">
+            <ul>
+              <li><div id="dot1" class="circle circle_current">&#x25cf;</div></li>
+              <li><div id="dot2" class="circle">&#x25cf;</div></li>
+            </ul>
+          </div>
+        </ons-carousel>
+      </div>
+
+      <div><ons-button class="shuffle" onclick="shuffle_play()"><ons-icon style="margin-right: 5px;" icon="fa-play"></ons-icon> SHUFFLE PLAY!</ons-button></div>
+      
+      <ons-list class="track_list">
+        <ons-list-item class="track_offline">
+          <div class="center">Available Offline</div>
+          <div class="right">
+            <ons-switch></ons-switch>
+          </div>
+        </ons-list-item>
+        <ons-list-item class="track" onclick="shuffle_play()" tappable>
+          <div class="center">
+            <div class="list-item__title">Track 01</div>
+            <div class="list-item__subtitle track_title">Unknown Artist - Track 01</div>
+          </div>
+          <div class="right">
+            <ons-icon icon="ion-ios-more,material:ion-android-more-vertical"></ons-icon>
+          </div>
+        </ons-list-item>
+        <ons-list-item class="track" tappable>
+          <div class="center">
+            <div class="list-item__title">Track 02</div>
+            <div class="list-item__subtitle track_title">Unknown Artist - Track 02</div>
+          </div>
+          <div class="right">
+            <ons-icon icon="ion-ios-more,material:ion-android-more-vertical"></ons-icon>
+          </div>
+        </ons-list-item>
+    </div>
+
+    <ons-toast>
+      <div onclick="openPlayScreen()"><ons-icon size="20px" style="margin-right: 10px" icon="fa-angle-up"></ons-icon> Unknown Artist - Track 01 </div>
+      <button><ons-icon id="play_icon" size="20px" style="color: white;" icon="fa-play-circle-o" onclick="play_toggle(this.id)"></ons-icon></button>
+    </ons-toast>
+
+  </ons-page>
+</template>
+
+<!-- Game Playlist -->
+<template id="playlist3.html">
+  <ons-page id="playlist-page">
+    <ons-toolbar modifier="transparent">
+      <div class="left"><ons-back-button></ons-back-button></div>
+      <div class="right">
+        <ons-toolbar-button>
+          <ons-icon style="color: white" icon="ion-ios-more,material:ion-android-more-vertical"></ons-icon>
+        </ons-toolbar-button>
+      </div>
+    </ons-toolbar>
+
+    <div class="content" style="text-align: center;">
+      <div class="playlist_content">
+        <ons-carousel class="carousel" swipeable auto-scroll id="carousel">
+          <ons-carousel-item>
+            <div>
+              <figure>
+                <img class="playlist_thumbnail" src="" >
+                <div class="playlist_title" id="playlist_title">Classical</div>
+              </figure>
+              <div>
+                <div class="playlist_follow">FOLLOW</div>
+              </div>
+              <div class="playlist_info">2,367 FOLLOWERS・BY UNKNOWN AUTHOR</div>
+            </div>
+          </ons-carousel-item>
+          
+          <ons-carousel-item>
+            <div>
+              <div class="playlist_description">
+                Though the author is unknown, this playlist offers the best music can offer, from relaxing tracks to tracks that will make you get on your fit and jump as much as you can! Enjoy ^_^
+              </div>
+              <div>
+                <div style="font-size: 14px; margin-bottom: 10px;">Created by</div>
+                <div><ons-icon icon="fa-user-circle" size="20px" style="margin-bottom: 10px;"></ons-icon></div>
+                <div class="playlist_username">Unknown</div>
+              </div>
+              <div style="font-size: 14px">
+                <div style="left: 25px; bottom: 45px; position: absolute;"><ons-icon icon="fa-calendar-plus-o"></ons-icon> 2017/06/20</div>
+                <div style="right: 25px; bottom: 45px; position: absolute;"><ons-icon icon="fa-clock-o"></ons-icon> 30 min</div>
+              </div>
+            </div>  
+          </ons-carousel-item>
+          <div class="cover-label center">
+            <ul>
+              <li><div id="dot1" class="circle circle_current">&#x25cf;</div></li>
+              <li><div id="dot2" class="circle">&#x25cf;</div></li>
+            </ul>
+          </div>
+        </ons-carousel>
+      </div>
+
+      <div><ons-button class="shuffle" onclick="shuffle_play()"><ons-icon style="margin-right: 5px;" icon="fa-play"></ons-icon> SHUFFLE PLAY!</ons-button></div>
+      
+      <ons-list class="track_list">
+        <ons-list-item class="track_offline">
+          <div class="center">Available Offline</div>
+          <div class="right">
+            <ons-switch></ons-switch>
+          </div>
+        </ons-list-item>
+        <ons-list-item class="track" onclick="shuffle_play()" tappable>
+          <div class="center">
+            <div class="list-item__title">Track 01</div>
+            <div class="list-item__subtitle track_title">Unknown Artist - Track 01</div>
+          </div>
+          <div class="right">
+            <ons-icon icon="ion-ios-more,material:ion-android-more-vertical"></ons-icon>
+          </div>
+        </ons-list-item>
+        <ons-list-item class="track" tappable>
+          <div class="center">
+            <div class="list-item__title">Track 02</div>
+            <div class="list-item__subtitle track_title">Unknown Artist - Track 02</div>
+          </div>
+          <div class="right">
+            <ons-icon icon="ion-ios-more,material:ion-android-more-vertical"></ons-icon>
+          </div>
+        </ons-list-item>
+    </div>
+
+    <ons-toast>
+      <div onclick="openPlayScreen()"><ons-icon size="20px" style="margin-right: 10px" icon="fa-angle-up"></ons-icon> Unknown Artist - Track 01 </div>
+      <button><ons-icon id="play_icon" size="20px" style="color: white;" icon="fa-play-circle-o" onclick="play_toggle(this.id)"></ons-icon></button>
+    </ons-toast>
+
+  </ons-page>
+</template>
+
+<!-- Education Playlist -->
+<template id="playlist4.html">
+  <ons-page id="playlist-page">
+    <ons-toolbar modifier="transparent">
+      <div class="left"><ons-back-button></ons-back-button></div>
+      <div class="right">
+        <ons-toolbar-button>
+          <ons-icon style="color: white" icon="ion-ios-more,material:ion-android-more-vertical"></ons-icon>
+        </ons-toolbar-button>
+      </div>
+    </ons-toolbar>
+
+    <div class="content" style="text-align: center;">
+      <div class="playlist_content">
+        <ons-carousel class="carousel" swipeable auto-scroll id="carousel">
+          <ons-carousel-item>
+            <div>
+              <figure>
+                <img class="playlist_thumbnail" src="" >
+                <div class="playlist_title" id="playlist_title">Classical</div>
+              </figure>
+              <div>
+                <div class="playlist_follow">FOLLOW</div>
+              </div>
+              <div class="playlist_info">3,056 FOLLOWERS・BY UNKNOWN AUTHOR</div>
+            </div>
+          </ons-carousel-item>
+          
+          <ons-carousel-item>
+            <div>
+              <div class="playlist_description">
+                Though the author is unknown, this playlist offers the best music can offer, from relaxing tracks to tracks that will make you get on your fit and jump as much as you can! Enjoy ^_^
+              </div>
+              <div>
+                <div style="font-size: 14px; margin-bottom: 10px;">Created by</div>
+                <div><ons-icon icon="fa-user-circle" size="20px" style="margin-bottom: 10px;"></ons-icon></div>
+                <div class="playlist_username">Unknown</div>
+              </div>
+              <div style="font-size: 14px">
+                <div style="left: 25px; bottom: 45px; position: absolute;"><ons-icon icon="fa-calendar-plus-o"></ons-icon> 2017/06/20</div>
+                <div style="right: 25px; bottom: 45px; position: absolute;"><ons-icon icon="fa-clock-o"></ons-icon> 30 min</div>
+              </div>
+            </div>  
+          </ons-carousel-item>
+          <div class="cover-label center">
+            <ul>
+              <li><div id="dot1" class="circle circle_current">&#x25cf;</div></li>
+              <li><div id="dot2" class="circle">&#x25cf;</div></li>
+            </ul>
+          </div>
+        </ons-carousel>
+      </div>
+
+      <div><ons-button class="shuffle" onclick="shuffle_play()"><ons-icon style="margin-right: 5px;" icon="fa-play"></ons-icon> SHUFFLE PLAY!</ons-button></div>
+      
+      <ons-list class="track_list">
+        <ons-list-item class="track_offline">
+          <div class="center">Available Offline</div>
+          <div class="right">
+            <ons-switch></ons-switch>
+          </div>
+        </ons-list-item>
+        <ons-list-item class="track" onclick="shuffle_play()" tappable>
+          <div class="center">
+            <div class="list-item__title">Track 01</div>
+            <div class="list-item__subtitle track_title">Unknown Artist - Track 01</div>
+          </div>
+          <div class="right">
+            <ons-icon icon="ion-ios-more,material:ion-android-more-vertical"></ons-icon>
+          </div>
+        </ons-list-item>
+        <ons-list-item class="track" tappable>
+          <div class="center">
+            <div class="list-item__title">Track 02</div>
+            <div class="list-item__subtitle track_title">Unknown Artist - Track 02</div>
+          </div>
+          <div class="right">
+            <ons-icon icon="ion-ios-more,material:ion-android-more-vertical"></ons-icon>
+          </div>
+        </ons-list-item>
+    </div>
+
+    <ons-toast>
+      <div onclick="openPlayScreen()"><ons-icon size="20px" style="margin-right: 10px" icon="fa-angle-up"></ons-icon> Unknown Artist - Track 01 </div>
+      <button><ons-icon id="play_icon" size="20px" style="color: white;" icon="fa-play-circle-o" onclick="play_toggle(this.id)"></ons-icon></button>
+    </ons-toast>
+
+  </ons-page>
+</template>
+
+<!-- Business Playlist -->
+<template id="playlist5.html">
+  <ons-page id="playlist-page">
+    <ons-toolbar modifier="transparent">
+      <div class="left"><ons-back-button></ons-back-button></div>
+      <div class="right">
+        <ons-toolbar-button>
+          <ons-icon style="color: white" icon="ion-ios-more,material:ion-android-more-vertical"></ons-icon>
+        </ons-toolbar-button>
+      </div>
+    </ons-toolbar>
+
+    <div class="content" style="text-align: center;">
+      <div class="playlist_content">
+        <ons-carousel class="carousel" swipeable auto-scroll id="carousel">
+          <ons-carousel-item>
+            <div>
+              <figure>
+                <img class="playlist_thumbnail" src="" >
+                <div class="playlist_title" id="playlist_title">Classical</div>
+              </figure>
+              <div>
+                <div class="playlist_follow">FOLLOW</div>
+              </div>
+              <div class="playlist_info">1,300 FOLLOWERS・BY UNKNOWN AUTHOR</div>
+            </div>
+          </ons-carousel-item>
+          
+          <ons-carousel-item>
+            <div>
+              <div class="playlist_description">
+                Though the author is unknown, this playlist offers the best music can offer, from relaxing tracks to tracks that will make you get on your fit and jump as much as you can! Enjoy ^_^
+              </div>
+              <div>
+                <div style="font-size: 14px; margin-bottom: 10px;">Created by</div>
+                <div><ons-icon icon="fa-user-circle" size="20px" style="margin-bottom: 10px;"></ons-icon></div>
+                <div class="playlist_username">Unknown</div>
+              </div>
+              <div style="font-size: 14px">
+                <div style="left: 25px; bottom: 45px; position: absolute;"><ons-icon icon="fa-calendar-plus-o"></ons-icon> 2017/06/20</div>
+                <div style="right: 25px; bottom: 45px; position: absolute;"><ons-icon icon="fa-clock-o"></ons-icon> 30 min</div>
+              </div>
+            </div>  
+          </ons-carousel-item>
+          <div class="cover-label center">
+            <ul>
+              <li><div id="dot1" class="circle circle_current">&#x25cf;</div></li>
+              <li><div id="dot2" class="circle">&#x25cf;</div></li>
+            </ul>
+          </div>
+        </ons-carousel>
+      </div>
+
+      <div><ons-button class="shuffle" onclick="shuffle_play()"><ons-icon style="margin-right: 5px;" icon="fa-play"></ons-icon> SHUFFLE PLAY!</ons-button></div>
+      
+      <ons-list class="track_list">
+        <ons-list-item class="track_offline">
+          <div class="center">Available Offline</div>
+          <div class="right">
+            <ons-switch></ons-switch>
+          </div>
+        </ons-list-item>
+        <ons-list-item class="track" onclick="shuffle_play()" tappable>
+          <div class="center">
+            <div class="list-item__title">Track 01</div>
+            <div class="list-item__subtitle track_title">Unknown Artist - Track 01</div>
+          </div>
+          <div class="right">
+            <ons-icon icon="ion-ios-more,material:ion-android-more-vertical"></ons-icon>
+          </div>
+        </ons-list-item>
+        <ons-list-item class="track" tappable>
+          <div class="center">
+            <div class="list-item__title">Track 02</div>
+            <div class="list-item__subtitle track_title">Unknown Artist - Track 02</div>
+          </div>
+          <div class="right">
+            <ons-icon icon="ion-ios-more,material:ion-android-more-vertical"></ons-icon>
+          </div>
+        </ons-list-item>
+    </div>
+
+    <ons-toast>
+      <div onclick="openPlayScreen()"><ons-icon size="20px" style="margin-right: 10px" icon="fa-angle-up"></ons-icon> Unknown Artist - Track 01 </div>
+      <button><ons-icon id="play_icon" size="20px" style="color: white;" icon="fa-play-circle-o" onclick="play_toggle(this.id)"></ons-icon></button>
+    </ons-toast>
+
+  </ons-page>
+</template>
+
+<!-- Health Playlist -->
+<template id="playlist6.html">
+  <ons-page id="playlist-page">
+    <ons-toolbar modifier="transparent">
+      <div class="left"><ons-back-button></ons-back-button></div>
+      <div class="right">
+        <ons-toolbar-button>
+          <ons-icon style="color: white" icon="ion-ios-more,material:ion-android-more-vertical"></ons-icon>
+        </ons-toolbar-button>
+      </div>
+    </ons-toolbar>
+
+    <div class="content" style="text-align: center;">
+      <div class="playlist_content">
+        <ons-carousel class="carousel" swipeable auto-scroll id="carousel">
+          <ons-carousel-item>
+            <div>
+              <figure>
+                <img class="playlist_thumbnail" src="" >
+                <div class="playlist_title" id="playlist_title">Classical</div>
+              </figure>
+              <div>
+                <div class="playlist_follow">FOLLOW</div>
+              </div>
+              <div class="playlist_info">2,450 FOLLOWERS・BY UNKNOWN AUTHOR</div>
+            </div>
+          </ons-carousel-item>
+          
+          <ons-carousel-item>
+            <div>
+              <div class="playlist_description">
+                Though the author is unknown, this playlist offers the best music can offer, from relaxing tracks to tracks that will make you get on your fit and jump as much as you can! Enjoy ^_^
+              </div>
+              <div>
+                <div style="font-size: 14px; margin-bottom: 10px;">Created by</div>
+                <div><ons-icon icon="fa-user-circle" size="20px" style="margin-bottom: 10px;"></ons-icon></div>
+                <div class="playlist_username">Unknown</div>
+              </div>
+              <div style="font-size: 14px">
+                <div style="left: 25px; bottom: 45px; position: absolute;"><ons-icon icon="fa-calendar-plus-o"></ons-icon> 2017/06/20</div>
+                <div style="right: 25px; bottom: 45px; position: absolute;"><ons-icon icon="fa-clock-o"></ons-icon> 30 min</div>
+              </div>
+            </div>  
+          </ons-carousel-item>
+          <div class="cover-label center">
+            <ul>
+              <li><div id="dot1" class="circle circle_current">&#x25cf;</div></li>
+              <li><div id="dot2" class="circle">&#x25cf;</div></li>
+            </ul>
+          </div>
+        </ons-carousel>
+      </div>
+
+      <div><ons-button class="shuffle" onclick="shuffle_play()"><ons-icon style="margin-right: 5px;" icon="fa-play"></ons-icon> SHUFFLE PLAY!</ons-button></div>
+      
+      <ons-list class="track_list">
+        <ons-list-item class="track_offline">
+          <div class="center">Available Offline</div>
+          <div class="right">
+            <ons-switch></ons-switch>
+          </div>
+        </ons-list-item>
+        <ons-list-item class="track" onclick="shuffle_play()" tappable>
+          <div class="center">
+            <div class="list-item__title">Track 01</div>
+            <div class="list-item__subtitle track_title">Unknown Artist - Track 01</div>
+          </div>
+          <div class="right">
+            <ons-icon icon="ion-ios-more,material:ion-android-more-vertical"></ons-icon>
+          </div>
+        </ons-list-item>
+        <ons-list-item class="track" tappable>
+          <div class="center">
+            <div class="list-item__title">Track 02</div>
+            <div class="list-item__subtitle track_title">Unknown Artist - Track 02</div>
+          </div>
+          <div class="right">
+            <ons-icon icon="ion-ios-more,material:ion-android-more-vertical"></ons-icon>
+          </div>
+        </ons-list-item>
+    </div>
+
+    <ons-toast>
+      <div onclick="openPlayScreen()"><ons-icon size="20px" style="margin-right: 10px" icon="fa-angle-up"></ons-icon> Unknown Artist - Track 01 </div>
+      <button><ons-icon id="play_icon" size="20px" style="color: white;" icon="fa-play-circle-o" onclick="play_toggle(this.id)"></ons-icon></button>
+    </ons-toast>
+
+  </ons-page>
+</template>
+
+</body>
+</html>
