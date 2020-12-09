@@ -7,7 +7,7 @@ $(function() {
             $("username").text(email)
 
         } else {
-            window.location.href = 'signin.html'
+            window.location.href = 'structure/browse.html'
         }
     });
 

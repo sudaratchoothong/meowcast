@@ -4,7 +4,7 @@ $(function() {
         if (user) {
             //User is signed in.
             console.log(user);
-            window.location.href = 'index.html';
+            window.location.href = 'structure/browse.html';
         }
     });
     $("#signingoogle").click(function() {
