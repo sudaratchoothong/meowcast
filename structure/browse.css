@@ -267,7 +267,7 @@
 
   :checked + .switch__toggle{
     background-color: #38d786;
-    box-shadow: inset 0 0 0 2px #38d786;
+    box-shadow: inset 0 0 0 2px #d4d738;
   }
 
   .switch__toggle{
