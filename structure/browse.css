@@ -26,7 +26,7 @@
       }
 
       .recomended {
-        background: linear-gradient(rgb(208, 247, 211),#151715);
+        background: linear-gradient(rgb(29, 205, 228),#151715);
         padding-top: 200px;
       }
 
@@ -54,7 +54,7 @@
         max-width: 120px;
         width: 90%;
         margin: auto;
-        background-color: rgba(128, 128, 128, 0.62);
+        background-color:rgba(116, 115, 115, 0.42);
       }
 
       .category_wrapper ons-icon {
@@ -76,7 +76,7 @@
    
       .playlist_content {
         padding-top: 44px;
-        background: linear-gradient(rgba(254, 221, 166, 0.42),rgba(73, 64, 49, 0.49));
+        background: linear-gradient(rgb(29, 205, 228),rgba(73, 64, 49, 0.49));
       }
 
       .carousel {
@@ -119,7 +119,7 @@
 
       .playlist_username {
         font-size: 14px;
-        background-color: rgba(142, 142, 142, 0.5);
+        background-color:rgb(29, 205, 228);
         width: 90px;
         margin: auto;
         border-radius: 10px;
@@ -192,7 +192,7 @@
       .play_wrapper {
         text-align: center;
         height: 100%;
-        background: linear-gradient(rgba(254, 221, 166, 0.42),rgba(73, 64, 49, 0.49));
+        background: linear-gradient(rgb(29, 205, 228),rgba(73, 64, 49, 0.49));
         padding-top: 44px;
       }
 
