@@ -4,12 +4,14 @@
 <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
 <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
 <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
-<link rel="stylesheet" href="browse.css">
-<script src="browse.js"></script>
+<link rel="stylesheet" href="/structure/browse.css">
+<script src="/structure/browse.js"></script>
 <script src="/structure/add.js"></script>
 </head>
 <body>
 <ons-navigator id="navigator" page="browse.html"></ons-navigator>
+
+
 
 <!-- The Browsing Page -->
 
@@ -18,35 +20,30 @@
     <ons-toolbar class="toolbar_semi-transparent" modifier="transparent">
       <div class="blur"></div>
       <div class="center">MEOWCAST</div>
+     
     </ons-toolbar>
+    
 
     <div class="content" style="text-align: center">
       <div class="recomended">
         <h4>Recomended Playlists</h4>
-        <ons-carousel auto-refresh swipeable overscrollable item-width="130px" class="recomended_list">
+        <ons-carousel auto-refresh swipeable overscrollable centered item-width="130px" class="recomended_list">
           <ons-carousel-item modifier="nodivider" id="playlist_1" class="recomended_playlist" onclick="openPlaylist(this.id)">
-            <div class="thumbnail"><img class="playlist_thumbnail" src=""></div>
-            <div class="recomended_playlist_title" id="playlist_1_name">Playlist 1</div>
+            <div class="thumbnail"><img class="playlist_thumbnail" src="https://firebasestorage.googleapis.com/v0/b/meowcast-10d67.appspot.com/o/siled_show%2Fart.PNG?alt=media&token=acfe3e66-0f8d-460f-b9f7-5e37a7f16634"></div>
+            <div class="recomended_playlist_title" id="playlist_1_name">Art</div>
           </ons-carousel-item>
-          <ons-carousel-item modifier="nodivider" id="playlist_2" class="recomended_playlist" onclick="openPlaylist(this.id)">
-            <div class="thumbnail"><img class="playlist_thumbnail" src=""></div>
-            <div class="recomended_playlist_title" id="playlist_2_name">Playlist 2</div>
+          <ons-carousel-item modifier="nodivider" id="playlist_2" class="recomended_playlist" onclick="openPlaylist3(this.id)">
+            <div class="thumbnail"><img class="playlist_thumbnail" src="https://firebasestorage.googleapis.com/v0/b/meowcast-10d67.appspot.com/o/siled_show%2Fgame.PNG?alt=media&token=4483e502-a255-4812-80a4-afc80286f2fc"></div>
+            <div class="recomended_playlist_title" id="playlist_2_name">Games</div>
           </ons-carousel-item>
-          <ons-carousel-item modifier="nodivider" id="playlist_3" class="recomended_playlist" onclick="openPlaylist(this.id)">
-            <div class="thumbnail"><ons-icon icon="ion-music-note"></ons-icon></div>
-            <div class="recomended_playlist_title" id="playlist_3_name">Playlist 3</div>
+          <ons-carousel-item modifier="nodivider" id="playlist_3" class="recomended_playlist" onclick="openPlaylist6(this.id)">
+            <div class="thumbnail"><img class="playlist_thumbnail" src="https://firebasestorage.googleapis.com/v0/b/meowcast-10d67.appspot.com/o/siled_show%2Fhealth.PNG?alt=media&token=8afa3fe1-000d-43fc-a529-616997f90437"></div>
+            <div class="recomended_playlist_title" id="playlist_3_name">Health</div>
           </ons-carousel-item>
-          <ons-carousel-item modifier="nodivider" id="playlist_4" class="recomended_playlist" onclick="openPlaylist(this.id)">
-            <div class="thumbnail"><ons-icon icon="ion-music-note"></ons-icon></div>
-            <div class="recomended_playlist_title" id="playlist_4_name">Playlist 4</div>
-          </ons-carousel-item>
-          <ons-carousel-item modifier="nodivider" id="playlist_5" class="recomended_playlist" onclick="openPlaylist(this.id)">
-            <div class="thumbnail"><ons-icon icon="ion-music-note"></ons-icon></div>
-            <div class="recomended_playlist_title" id="playlist_5_name">Playlist 5</div>
-          </ons-carousel-item>
+         
         </ons-carousel>
       </div>
-
+      
       <div>
         <h4 style="padding-top: 10px;">Genre &amp; Mood</h4>
         <ons-row class="category">
@@ -105,6 +102,21 @@
         </ons-row>
       </div>
     </div>
+
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+ 
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-auth.js"></script>
+<script src="firebase.js"></script>
+<script src="/structure/browse.js"></script>
   </ons-page>
 </template>
 
@@ -116,7 +128,7 @@
     <ons-toolbar modifier="transparent">
       <div class="left"><ons-back-button></ons-back-button></div>
       <div class="right">
-        <ons-toolbar-button>
+        <ons-toolbar-button onclick="fn.open()">
           <ons-icon style="color: white" icon="ion-ios-more,material:ion-android-more-vertical"></ons-icon>
         </ons-toolbar-button>
       </div>
@@ -128,7 +140,7 @@
           <ons-carousel-item>
             <div>
               <figure>
-                <img class="playlist_thumbnail" src="Art1.jpg">
+                <img class="playlist_thumbnail" src="https://firebasestorage.googleapis.com/v0/b/meowcast-10d67.appspot.com/o/poster%2F%E0%B8%AB%E0%B8%99%E0%B9%89%E0%B8%B2%E0%B8%9B%E0%B8%81-Art.jpg?alt=media&token=bf14d9e0-f43c-4ea0-939e-2e81d837aca5">
                 <div class="playlist_title" id="playlist_title">Classical</div>
               </figure>
               <div>
@@ -162,6 +174,7 @@
           </div>
         </ons-carousel>
       </div>
+   
 
       <div><ons-button class="shuffle" onclick="shuffle_play()"><ons-icon style="margin-right: 5px;" icon="fa-play"></ons-icon> SHUFFLE PLAY!</ons-button></div>
       
@@ -174,31 +187,48 @@
         </ons-list-item>
         <ons-list-item class="track" onclick="shuffle_play()" tappable>
           <div class="center">
-            <div class="list-item__title">Track 01</div>
-            <div class="list-item__subtitle track_title">Unknown Artist - Track 01</div>
+            <div class="list-item__title">01 ศิลปะการต่อสู่</div>
+            <div class="list-item__subtitle track_title">The Cloud Podcast-01 ศิลปะการต่อสู่</div>
           </div>
           <div class="right">
             <ons-icon icon="ion-ios-more,material:ion-android-more-vertical"></ons-icon>
           </div>
         </ons-list-item>
-        <ons-list-item class="track" tappable>
+        <ons-list-item class="track"onclick="shuffle_play()" tappable>
           <div class="center">
-            <div class="list-item__title">Track 02</div>
-            <div class="list-item__subtitle track_title">Unknown Artist - Track 02</div>
+            <div class="list-item__title"> 02 ปาโบล ปิกัสโซ กับ 6 วิธีที่ทำให้คุณสร้างสรรค์งานได้อัจฉริยะใกล้เคียงเขา
+            </div>
+            <div class="list-item__subtitle track_title">The Secret Sauce-02 ปาโบล ปิกัสโซ กับ 6 วิธีที่ทำให้คุณสร้างสรรค์งานได้อัจฉริยะใกล้เคียงเขา
+            </div>
           </div>
           <div class="right">
             <ons-icon icon="ion-ios-more,material:ion-android-more-vertical"></ons-icon>
           </div>
         </ons-list-item>
     </div>
+     
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+ 
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-auth.js"></script>
+<script src="firebase.js"></script>
+<script src="/structure/browse.js"></script>
 
     <ons-toast>
-      <div onclick="openPlayScreen()"><ons-icon size="20px" style="margin-right: 10px" icon="fa-angle-up"></ons-icon> Unknown Artist - Track 01 </div>
+      <div onclick="openPlayScreen()"><ons-icon size="20px" style="margin-right: 10px" icon="fa-angle-up"></ons-icon> The Cloud Podcast-01 ศิลปะการต่อสู่ </div>
       <button><ons-icon id="play_icon" size="20px" style="color: white;" icon="fa-play-circle-o" onclick="play_toggle(this.id)"></ons-icon></button>
     </ons-toast>
-
-    
-
+    <ons-toast>
+      <div onclick="openPlayScreen2()"><ons-icon size="20px" style="margin-right: 10px" icon="fa-angle-up"></ons-icon> The Secret Sauce-02 ปาโบล ปิกัสโซ กับ 6 วิธีที่ทำให้คุณสร้างสรรค์งานได้อัจฉริยะใกล้เคียงเขา </div>
+      <button><ons-icon id="play_icon" size="20px" style="color: white;" icon="fa-play-circle-o" onclick="play_toggle(this.id)"></ons-icon></button>
+    </ons-toast>
   </ons-page>
 </template>
 
@@ -211,50 +241,51 @@
       <div class="left"><ons-toolbar-button id="back_button"><ons-icon style="color: white" icon="fa-angle-down"></ons-icon></ons-toolbar-button></div>
       <div class="center" style="margin-top: -5px;">
         <div style="font-size: 8px; height: 15px; color: #999;">PLAYING FROM ALBUM</div>
-        <div style="font-size: 12px;" id="from_playlist">Playlist 01</div>
+        <div style="font-size: 12px;" id="from_playlist">01 ศิลปะการต่อสู่</div>
       </div>
-      <div class="right"><ons-toolbar-button><ons-icon style="color: white" icon="fa-bars"></ons-icon></ons-toolbar-button></div>
+      <div class="right"><ons-toolbar-button><ons-icon style="color: white" icon="fa-bars">
+      </ons-icon></ons-toolbar-button></div>
     </ons-toolbar>
 
     <div class="play_wrapper">
       <div style="margin: 20px auto 20px; width: 85%">
-        <img style="width: 100%;" src="Art1.jpg">
+        <img style="width: 100%;" src="https://firebasestorage.googleapis.com/v0/b/meowcast-10d67.appspot.com/o/wallpaper%2Fart1.jpg?alt=media&token=438e3a0f-08b6-4b9b-a16f-8da50bf5ac40">
       </div>
       <ons-row>
         <ons-col  width="40px" class="function_icon"><ons-icon icon="ion-ios-plus-outline" style="font-size: 12px;"></ons-icon></ons-col>
         <ons-col style="font-size: 12px; margin-bottom: 20px;">
-          <div><b>Track 01</b></div>
-          <div style="margin-top: 5px; color: #999;">Unknown Artist</div>
+          <div><b>01 ศิลปะการต่อสู่</b></div>
+          <div style="margin-top: 5px; color: #999;">The Cloud Podcast</div>
         </ons-col>
         <ons-col  width="40px" class="function_icon"><ons-icon icon="ion-more"></ons-icon></ons-col>
       </ons-row>
       <ons-row>
-        <ons-col  width="50px" class="duration_info">0:45</ons-col>
-        <ons-col style="padding-top: 7px;"><ons-progress-bar value="17"></ons-progress-bar></ons-col>
-        <ons-col  width="50px" class="duration_info">4:35</ons-col>
-      </ons-row>
-      <ons-row style="margin-top: 20px; line-height: 60px;">
-        <ons-col>
-          <ons-icon class="player_button" icon="fa-random"></ons-icon>
-        </ons-col>
-        <ons-col>
-          <ons-icon class="player_button" size="25px" icon="fa-step-backward" tappable></ons-icon>
-        </ons-col>
-        <ons-col>
-          <ons-icon class="player_button" size="60px" icon="fa-pause-circle-o" id="play_icon_big" onclick="play_toggle(this.id)"></ons-icon>
-        </ons-col>
-        <ons-col>
-          <ons-icon class="player_button" size="25px" icon="fa-step-forward"></ons-icon>
-        </ons-col>
-        <ons-col>
-          <ons-icon class="player_button" icon="fa-repeat"></ons-icon>
-        </ons-col>
-      </ons-row>
+      
+        <div class="audio_play">
+          <audio controls="controls">
+         <source src="https://firebasestorage.googleapis.com/v0/b/meowcast-10d67.appspot.com/o/mp3%2F1.%E0%B8%A8%E0%B8%B4%E0%B8%A5%E0%B8%9B%E0%B8%B0%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%95%E0%B9%88%E0%B8%AD%E0%B8%AA%E0%B8%B9%E0%B9%89%20Art.mp3?alt=media&token=998b3e4b-f886-4dbe-b5f4-b0a4c0c5def3" type="audio/mp3">
+
+        </audio>
+        </div>
+          
     </div>
+     
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+ 
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-auth.js"></script>
+<script src="firebase.js"></script>
+<script src="/structure/browse.js"></script>
 
   </ons-page>
 </template>
-
 
 <!-- Comedy Playlist -->
 <template id="playlist2.html">
@@ -262,8 +293,9 @@
     <ons-toolbar modifier="transparent">
       <div class="left"><ons-back-button></ons-back-button></div>
       <div class="right">
-        <ons-toolbar-button>
+        <ons-toolbar-button onclick="fn.open()">
           <ons-icon style="color: white" icon="ion-ios-more,material:ion-android-more-vertical"></ons-icon>
+        
         </ons-toolbar-button>
       </div>
     </ons-toolbar>
@@ -274,7 +306,7 @@
           <ons-carousel-item>
             <div>
               <figure>
-                <img class="playlist_thumbnail" src="" >
+                <img class="playlist_thumbnail" src="https://firebasestorage.googleapis.com/v0/b/meowcast-10d67.appspot.com/o/poster%2F%E0%B8%AB%E0%B8%99%E0%B9%89%E0%B8%B2%E0%B8%9B%E0%B8%81-%20comedy.jpg?alt=media&token=3dabc2fa-174b-4321-97d4-6a97f6e2d983" >
                 <div class="playlist_title" id="playlist_title">Classical</div>
               </figure>
               <div>
@@ -308,6 +340,7 @@
           </div>
         </ons-carousel>
       </div>
+     
 
       <div><ons-button class="shuffle" onclick="shuffle_play()"><ons-icon style="margin-right: 5px;" icon="fa-play"></ons-icon> SHUFFLE PLAY!</ons-button></div>
       
@@ -320,28 +353,90 @@
         </ons-list-item>
         <ons-list-item class="track" onclick="shuffle_play()" tappable>
           <div class="center">
-            <div class="list-item__title">Track 01</div>
-            <div class="list-item__subtitle track_title">Unknown Artist - Track 01</div>
-          </div>
-          <div class="right">
-            <ons-icon icon="ion-ios-more,material:ion-android-more-vertical"></ons-icon>
-          </div>
-        </ons-list-item>
-        <ons-list-item class="track" tappable>
-          <div class="center">
-            <div class="list-item__title">Track 02</div>
-            <div class="list-item__subtitle track_title">Unknown Artist - Track 02</div>
+            <div class="list-item__title">01 อารมณ์ขันเป็นอาวุธลับในการเล่าเรื่อง
+            </div>
+            <div class="list-item__subtitle track_title">Story Decode - 01 อารมณ์ขันเป็นอาวุธลับในการเล่าเรื่อง
+            </div> </div>
           </div>
           <div class="right">
             <ons-icon icon="ion-ios-more,material:ion-android-more-vertical"></ons-icon>
           </div>
         </ons-list-item>
     </div>
+    
+
+ 
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+ 
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-auth.js"></script>
+<script src="firebase.js"></script>
+<script src="/structure/browse.js"></script>
 
     <ons-toast>
-      <div onclick="openPlayScreen()"><ons-icon size="20px" style="margin-right: 10px" icon="fa-angle-up"></ons-icon> Unknown Artist - Track 01 </div>
+      <div onclick="openPlayScreen2()"><ons-icon size="20px" style="margin-right: 10px" icon="fa-angle-up"></ons-icon> Story Decode - 01 อารมณ์ขันเป็นอาวุธลับในการเล่าเรื่อง </div>
       <button><ons-icon id="play_icon" size="20px" style="color: white;" icon="fa-play-circle-o" onclick="play_toggle(this.id)"></ons-icon></button>
     </ons-toast>
+  </ons-page>
+</template>
+
+<!-- The PlayComedy Screen -->
+
+<template id="play2.html">
+  <ons-page id="play-page">
+    <ons-toolbar modifier="transparent">
+      <div class="left"><ons-toolbar-button id="back_button"><ons-icon style="color: white" icon="fa-angle-down"></ons-icon></ons-toolbar-button></div>
+      <div class="center" style="margin-top: -5px;">
+        <div style="font-size: 8px; height: 15px; color: #999;">PLAYING FROM ALBUM</div>
+        <div style="font-size: 12px;" id="from_playlist">01 อารมณ์ขันเป็นอาวุธลับในการเล่าเรื่อง
+        </div> </div></div>
+      </div>
+      <div class="right"><ons-toolbar-button><ons-icon style="color: white" icon="fa-bars"></ons-icon></ons-toolbar-button></div>
+    </ons-toolbar>
+
+    <div class="play_wrapper">
+      <div style="margin: 20px auto 20px; width: 85%">
+        <img style="width: 100%;" src="https://firebasestorage.googleapis.com/v0/b/meowcast-10d67.appspot.com/o/wallpaper%2Fcomedy1.jpg?alt=media&token=d3e25aef-6b26-478c-92fd-ee48026d8484">
+      </div>
+      <ons-row>
+        <ons-col  width="40px" class="function_icon"><ons-icon icon="ion-ios-plus-outline" style="font-size: 12px;"></ons-icon></ons-col>
+        <ons-col style="font-size: 12px; margin-bottom: 20px;">
+          <div><b>01 อารมณ์ขันเป็นอาวุธลับในการเล่าเรื่อง</b></div>
+          <div style="margin-top: 5px; color: #999;">Story Decode</div>
+        </ons-col>
+        <ons-col  width="40px" class="function_icon"><ons-icon icon="ion-more"></ons-icon></ons-col>
+      </ons-row>
+      <ons-row>
+        <div class="audio_play">
+          <audio controls="controls">
+         <source src="https://firebasestorage.googleapis.com/v0/b/meowcast-10d67.appspot.com/o/mp3%2F1.%E0%B8%AD%E0%B8%B2%E0%B8%A3%E0%B8%A1%E0%B8%93%E0%B9%8C%E0%B8%82%E0%B8%B1%E0%B8%99%E0%B9%80%E0%B8%9B%E0%B9%87%E0%B8%99%E0%B8%AD%E0%B8%B2%E0%B8%A7%E0%B8%B8%E0%B8%98%E0%B8%A5%E0%B8%B1%E0%B8%9A.mp3?alt=media&token=a5d0da50-b760-42eb-885f-1c9bab2504a1" type="audio/mp3">
+
+        </audio>
+        </div>
+      </ons-row>
+    
+    </div>
+     
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+ 
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-auth.js"></script>
+<script src="firebase.js"></script>
+<script src="/structure/browse.js"></script>
 
   </ons-page>
 </template>
@@ -352,7 +447,7 @@
     <ons-toolbar modifier="transparent">
       <div class="left"><ons-back-button></ons-back-button></div>
       <div class="right">
-        <ons-toolbar-button>
+        <ons-toolbar-button onclick="fn.open()">
           <ons-icon style="color: white" icon="ion-ios-more,material:ion-android-more-vertical"></ons-icon>
         </ons-toolbar-button>
       </div>
@@ -364,7 +459,7 @@
           <ons-carousel-item>
             <div>
               <figure>
-                <img class="playlist_thumbnail" src="" >
+                <img class="playlist_thumbnail" src="https://firebasestorage.googleapis.com/v0/b/meowcast-10d67.appspot.com/o/poster%2F%E0%B8%AB%E0%B8%99%E0%B9%89%E0%B8%B2%E0%B8%9B%E0%B8%81-Games.jpg?alt=media&token=06109db6-bfce-4ece-8c9b-57cd6489296d" >
                 <div class="playlist_title" id="playlist_title">Classical</div>
               </figure>
               <div>
@@ -398,6 +493,7 @@
           </div>
         </ons-carousel>
       </div>
+     
 
       <div><ons-button class="shuffle" onclick="shuffle_play()"><ons-icon style="margin-right: 5px;" icon="fa-play"></ons-icon> SHUFFLE PLAY!</ons-button></div>
       
@@ -410,29 +506,86 @@
         </ons-list-item>
         <ons-list-item class="track" onclick="shuffle_play()" tappable>
           <div class="center">
-            <div class="list-item__title">Track 01</div>
-            <div class="list-item__subtitle track_title">Unknown Artist - Track 01</div>
+            <div class="list-item__title">01 ทำไมคนส่วนใหญ่... เล่นเกมไม่จบ</div>
+            <div class="list-item__subtitle track_title">Unknown Artist - 01 ทำไมคนส่วนใหญ่... เล่นเกมไม่จบ</div>
           </div>
           <div class="right">
             <ons-icon icon="ion-ios-more,material:ion-android-more-vertical"></ons-icon>
           </div>
         </ons-list-item>
-        <ons-list-item class="track" tappable>
-          <div class="center">
-            <div class="list-item__title">Track 02</div>
-            <div class="list-item__subtitle track_title">Unknown Artist - Track 02</div>
-          </div>
-          <div class="right">
-            <ons-icon icon="ion-ios-more,material:ion-android-more-vertical"></ons-icon>
-          </div>
-        </ons-list-item>
+        
     </div>
+     
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+ 
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-auth.js"></script>
+<script src="firebase.js"></script>
+<script src="/structure/browse.js"></script>
 
     <ons-toast>
-      <div onclick="openPlayScreen()"><ons-icon size="20px" style="margin-right: 10px" icon="fa-angle-up"></ons-icon> Unknown Artist - Track 01 </div>
+      <div onclick="openPlayScreen3()"><ons-icon size="20px" style="margin-right: 10px" icon="fa-angle-up"></ons-icon> Unknown Artist - 01 ทำไมคนส่วนใหญ่... เล่นเกมไม่จบ</div>
       <button><ons-icon id="play_icon" size="20px" style="color: white;" icon="fa-play-circle-o" onclick="play_toggle(this.id)"></ons-icon></button>
     </ons-toast>
 
+  </ons-page>
+</template>
+
+<!-- The PlayGame Screen -->
+<template id="play3.html">
+  <ons-page id="play-page">
+    <ons-toolbar modifier="transparent">
+      <div class="left"><ons-toolbar-button id="back_button"><ons-icon style="color: white" icon="fa-angle-down"></ons-icon></ons-toolbar-button></div>
+      <div class="center" style="margin-top: -5px;">
+        <div style="font-size: 8px; height: 15px; color: #999;">PLAYING FROM ALBUM</div>
+        <div style="font-size: 12px;" id="from_playlist">01 ทำไมคนส่วนใหญ่... เล่นเกมไม่จบ</div>
+      </div>
+      <div class="right"><ons-toolbar-button><ons-icon style="color: white" icon="fa-bars"></ons-icon></ons-toolbar-button></div>
+    </ons-toolbar>
+
+    <div class="play_wrapper">
+      <div style="margin: 20px auto 20px; width: 85%">
+        <img style="width: 100%;" src="https://firebasestorage.googleapis.com/v0/b/meowcast-10d67.appspot.com/o/wallpaper%2Fgame1.jpg?alt=media&token=6d478293-167b-4532-9626-8f9c29abfb90">
+      </div>
+      <ons-row>
+        <ons-col  width="40px" class="function_icon"><ons-icon icon="ion-ios-plus-outline" style="font-size: 12px;"></ons-icon></ons-col>
+        <ons-col style="font-size: 12px; margin-bottom: 20px;">
+          <div><b>01 ทำไมคนส่วนใหญ่... เล่นเกมไม่จบ</b></div>
+          <div style="margin-top: 5px; color: #999;">Unknown Artist</div>
+        </ons-col>
+        <ons-col  width="40px" class="function_icon"><ons-icon icon="ion-more"></ons-icon></ons-col>
+      </ons-row>
+      <ons-row>
+        <div class="audio_play">
+          <audio controls="controls">
+         <source src="https://firebasestorage.googleapis.com/v0/b/meowcast-10d67.appspot.com/o/mp3%2F1.%E0%B8%97%E0%B8%B3%E0%B9%84%E0%B8%A1%E0%B8%84%E0%B8%99%E0%B8%AA%E0%B9%88%E0%B8%A7%E0%B8%99%E0%B9%83%E0%B8%AB%E0%B8%8D%E0%B9%88...%20%E0%B9%80%E0%B8%A5%E0%B9%88%E0%B8%99%E0%B9%80%E0%B8%81%E0%B8%A1%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B8%88%E0%B8%9A.mp3?alt=media&token=539598ef-d2fc-4234-bcdd-13495855f5ee" type="audio/mp3">
+
+        </audio>
+        </div>
+      </ons-row>
+      
+    </div>
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+ 
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-auth.js"></script>
+<script src="firebase.js"></script>
+<script src="/structure/browse.js"></script>
   </ons-page>
 </template>
 
@@ -454,7 +607,7 @@
           <ons-carousel-item>
             <div>
               <figure>
-                <img class="playlist_thumbnail" src="" >
+                <img class="playlist_thumbnail" src="https://firebasestorage.googleapis.com/v0/b/meowcast-10d67.appspot.com/o/poster%2F%E0%B8%AB%E0%B8%99%E0%B9%89%E0%B8%B2%E0%B8%9B%E0%B8%81%20-Edu.jpg?alt=media&token=7392f316-ee94-425c-8e58-d6d987a64b05" >
                 <div class="playlist_title" id="playlist_title">Classical</div>
               </figure>
               <div>
@@ -488,6 +641,7 @@
           </div>
         </ons-carousel>
       </div>
+     
 
       <div><ons-button class="shuffle" onclick="shuffle_play()"><ons-icon style="margin-right: 5px;" icon="fa-play"></ons-icon> SHUFFLE PLAY!</ons-button></div>
       
@@ -500,28 +654,88 @@
         </ons-list-item>
         <ons-list-item class="track" onclick="shuffle_play()" tappable>
           <div class="center">
-            <div class="list-item__title">Track 01</div>
-            <div class="list-item__subtitle track_title">Unknown Artist - Track 01</div>
+            <div class="list-item__title"> 01 อนาคตการศึกษาหลังโควิด-19 เป็นอย่างไร โรงเรียนยังจำเป็นอยู่ไหม</div>
+            <div class="list-item__subtitle track_title">The Secret Sauce
+              -  01 อนาคตการศึกษาหลังโควิด-19 เป็นอย่างไร โรงเรียนยังจำเป็นอยู่ไหม</div>
           </div>
           <div class="right">
             <ons-icon icon="ion-ios-more,material:ion-android-more-vertical"></ons-icon>
           </div>
         </ons-list-item>
-        <ons-list-item class="track" tappable>
-          <div class="center">
-            <div class="list-item__title">Track 02</div>
-            <div class="list-item__subtitle track_title">Unknown Artist - Track 02</div>
-          </div>
-          <div class="right">
-            <ons-icon icon="ion-ios-more,material:ion-android-more-vertical"></ons-icon>
-          </div>
-        </ons-list-item>
+        
     </div>
-
+     
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+ 
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-auth.js"></script>
+<script src="firebase.js"></script>
+<script src="/structure/browse.js"></script>
     <ons-toast>
-      <div onclick="openPlayScreen()"><ons-icon size="20px" style="margin-right: 10px" icon="fa-angle-up"></ons-icon> Unknown Artist - Track 01 </div>
+      <div onclick="openPlayScreen4()"><ons-icon size="20px" style="margin-right: 10px" icon="fa-angle-up"></ons-icon> The Secret Sauce
+        -  01 อนาคตการศึกษาหลังโควิด-19 เป็นอย่างไร โรงเรียนยังจำเป็นอยู่ไหม </div>
       <button><ons-icon id="play_icon" size="20px" style="color: white;" icon="fa-play-circle-o" onclick="play_toggle(this.id)"></ons-icon></button>
     </ons-toast>
+
+  </ons-page>
+</template>
+
+<!-- The PlayEducation Screen -->
+<template id="play4.html">
+  <ons-page id="play-page">
+    <ons-toolbar modifier="transparent">
+      <div class="left"><ons-toolbar-button id="back_button"><ons-icon style="color: white" icon="fa-angle-down"></ons-icon></ons-toolbar-button></div>
+      <div class="center" style="margin-top: -5px;">
+        <div style="font-size: 8px; height: 15px; color: #999;">PLAYING FROM ALBUM</div>
+        <div style="font-size: 12px;" id="from_playlist">The Secret Sauce
+          -  01 อนาคตการศึกษาหลังโควิด-19 เป็นอย่างไร โรงเรียนยังจำเป็นอยู่ไหม</div>
+      </div>
+      <div class="right"><ons-toolbar-button><ons-icon style="color: white" icon="fa-bars"></ons-icon></ons-toolbar-button></div>
+    </ons-toolbar>
+
+    <div class="play_wrapper">
+      <div style="margin: 20px auto 20px; width: 85%">
+        <img style="width: 100%;" src="https://firebasestorage.googleapis.com/v0/b/meowcast-10d67.appspot.com/o/wallpaper%2Feu2.jpg?alt=media&token=8175ae2b-ce31-464a-a1e8-a8a0120f8c94">
+      </div>
+      <ons-row>
+        <ons-col  width="40px" class="function_icon"><ons-icon icon="ion-ios-plus-outline" style="font-size: 12px;"></ons-icon></ons-col>
+        <ons-col style="font-size: 12px; margin-bottom: 20px;">
+          <div><b> 01 อนาคตการศึกษาหลังโควิด-19 เป็นอย่างไร โรงเรียนยังจำเป็นอยู่ไหม</b></div>
+          <div style="margin-top: 5px; color: #999;">The Secret Sauce</div>
+        </ons-col>
+        <ons-col  width="40px" class="function_icon"><ons-icon icon="ion-more"></ons-icon></ons-col>
+      </ons-row>
+      <ons-row>
+        <div class="audio_play">
+          <audio controls="controls">
+         <source src="https://firebasestorage.googleapis.com/v0/b/meowcast-10d67.appspot.com/o/mp3%2F2.%E0%B8%AD%E0%B8%99%E0%B8%B2%E0%B8%84%E0%B8%95%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%A8%E0%B8%B6%E0%B8%81%E0%B8%A9%E0%B8%B2%E0%B8%AB%E0%B8%A5%E0%B8%B1%E0%B8%87%E0%B9%82%E0%B8%84%E0%B8%A7%E0%B8%B4%E0%B8%94-19.mp3?alt=media&token=5168c37b-9577-47d0-b9e6-e0c4402674ce" type="audio/mp3">
+
+        </audio>
+        </div>
+      </ons-row>
+     
+    </div>
+     
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+ 
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-auth.js"></script>
+<script src="firebase.js"></script>
+<script src="/structure/browse.js"></script>
 
   </ons-page>
 </template>
@@ -544,7 +758,7 @@
           <ons-carousel-item>
             <div>
               <figure>
-                <img class="playlist_thumbnail" src="" >
+                <img class="playlist_thumbnail" src="https://firebasestorage.googleapis.com/v0/b/meowcast-10d67.appspot.com/o/poster%2F%E0%B8%AB%E0%B8%99%E0%B9%89%E0%B8%B2%E0%B8%9B%E0%B8%81-Busi.jpg?alt=media&token=4e44dad3-fd55-4e14-978a-7605b6b00765" >
                 <div class="playlist_title" id="playlist_title">Classical</div>
               </figure>
               <div>
@@ -578,6 +792,7 @@
           </div>
         </ons-carousel>
       </div>
+      
 
       <div><ons-button class="shuffle" onclick="shuffle_play()"><ons-icon style="margin-right: 5px;" icon="fa-play"></ons-icon> SHUFFLE PLAY!</ons-button></div>
       
@@ -590,28 +805,89 @@
         </ons-list-item>
         <ons-list-item class="track" onclick="shuffle_play()" tappable>
           <div class="center">
-            <div class="list-item__title">Track 01</div>
-            <div class="list-item__subtitle track_title">Unknown Artist - Track 01</div>
+            <div class="list-item__title"> 01 เริ่มต้นธุรกิจด้วยวิธีคิดแบบ ‘Lean’
+              </div>
+            <div class="list-item__subtitle track_title">Unknown Artist - 01 เริ่มต้นธุรกิจด้วยวิธีคิดแบบ ‘Lean’
+            </div>
           </div>
           <div class="right">
             <ons-icon icon="ion-ios-more,material:ion-android-more-vertical"></ons-icon>
           </div>
         </ons-list-item>
-        <ons-list-item class="track" tappable>
-          <div class="center">
-            <div class="list-item__title">Track 02</div>
-            <div class="list-item__subtitle track_title">Unknown Artist - Track 02</div>
-          </div>
-          <div class="right">
-            <ons-icon icon="ion-ios-more,material:ion-android-more-vertical"></ons-icon>
-          </div>
-        </ons-list-item>
+       
     </div>
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+ 
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-auth.js"></script>
+<script src="firebase.js"></script>
+<script src="/structure/browse.js"></script>
 
     <ons-toast>
-      <div onclick="openPlayScreen()"><ons-icon size="20px" style="margin-right: 10px" icon="fa-angle-up"></ons-icon> Unknown Artist - Track 01 </div>
+      <div onclick="openPlayScreen5()"><ons-icon size="20px" style="margin-right: 10px" icon="fa-angle-up"></ons-icon> Unknown Artist - 01 เริ่มต้นธุรกิจด้วยวิธีคิดแบบ ‘Lean’
+      </div>
       <button><ons-icon id="play_icon" size="20px" style="color: white;" icon="fa-play-circle-o" onclick="play_toggle(this.id)"></ons-icon></button>
     </ons-toast>
+
+  </ons-page>
+</template>
+
+<!-- The PlayBusiness Screen -->
+<template id="play5.html">
+  <ons-page id="play-page">
+    <ons-toolbar modifier="transparent">
+      <div class="left"><ons-toolbar-button id="back_button"><ons-icon style="color: white" icon="fa-angle-down"></ons-icon></ons-toolbar-button></div>
+      <div class="center" style="margin-top: -5px;">
+        <div style="font-size: 8px; height: 15px; color: #999;">PLAYING FROM ALBUM</div>
+        <div style="font-size: 12px;" id="from_playlist">Unknown Artist - 01 เริ่มต้นธุรกิจด้วยวิธีคิดแบบ ‘Lean’</div>
+      </div>
+      <div class="right"><ons-toolbar-button><ons-icon style="color: white" icon="fa-bars"></ons-icon></ons-toolbar-button></div>
+    </ons-toolbar>
+
+    <div class="play_wrapper">
+      <div style="margin: 20px auto 20px; width: 85%">
+        <img style="width: 100%;" src="https://firebasestorage.googleapis.com/v0/b/meowcast-10d67.appspot.com/o/wallpaper%2Fbusi2.jpg?alt=media&token=d71a3664-b83f-4354-8960-9d4338c5dcd0">
+      </div>
+      <ons-row>
+        <ons-col  width="40px" class="function_icon"><ons-icon icon="ion-ios-plus-outline" style="font-size: 12px;"></ons-icon></ons-col>
+        <ons-col style="font-size: 12px; margin-bottom: 20px;">
+          <div><b>01 เริ่มต้นธุรกิจด้วยวิธีคิดแบบ ‘Lean’</b></div>
+          <div style="margin-top: 5px; color: #999;">Unknown Artist</div>
+        </ons-col>
+        <ons-col  width="40px" class="function_icon"><ons-icon icon="ion-more"></ons-icon></ons-col>
+      </ons-row>
+      <ons-row>
+        <div class="audio_play">
+          <audio controls="controls">
+         <source src="https://firebasestorage.googleapis.com/v0/b/meowcast-10d67.appspot.com/o/mp3%2F2.%20%E0%B8%97%E0%B8%B3%E0%B8%98%E0%B8%B8%E0%B8%A3%E0%B8%81%E0%B8%B4%E0%B8%88%E0%B9%81%E0%B8%9A%E0%B8%9ALean.mp3?alt=media&token=08e5e8c7-4268-4598-a296-a1b6aa2fc47e" type="audio/mp3">
+
+        </audio>
+        </div>
+      </ons-row>
+      
+    </div>
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+ 
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-auth.js"></script>
+<script src="firebase.js"></script>
+<script src="/structure/browse.js"></script>
 
   </ons-page>
 </template>
@@ -634,7 +910,7 @@
           <ons-carousel-item>
             <div>
               <figure>
-                <img class="playlist_thumbnail" src="" >
+                <img class="playlist_thumbnail" src="https://firebasestorage.googleapis.com/v0/b/meowcast-10d67.appspot.com/o/poster%2F%E0%B8%AB%E0%B8%99%E0%B9%89%E0%B8%B2%E0%B8%9B%E0%B8%81-%20Hel.jpg?alt=media&token=8f39239d-0105-4980-a5f2-86f1ce27ba16" >
                 <div class="playlist_title" id="playlist_title">Classical</div>
               </figure>
               <div>
@@ -680,31 +956,90 @@
         </ons-list-item>
         <ons-list-item class="track" onclick="shuffle_play()" tappable>
           <div class="center">
-            <div class="list-item__title">Track 01</div>
-            <div class="list-item__subtitle track_title">Unknown Artist - Track 01</div>
+            <div class="list-item__title"> 01 ว่าด้วยเรื่อง "สุขภาพจิต"
+            </div>
+            <div class="list-item__subtitle track_title">Unknown Artist - 01 ว่าด้วยเรื่อง "สุขภาพจิต"
+            </div>
           </div>
           <div class="right">
             <ons-icon icon="ion-ios-more,material:ion-android-more-vertical"></ons-icon>
           </div>
         </ons-list-item>
-        <ons-list-item class="track" tappable>
-          <div class="center">
-            <div class="list-item__title">Track 02</div>
-            <div class="list-item__subtitle track_title">Unknown Artist - Track 02</div>
-          </div>
-          <div class="right">
-            <ons-icon icon="ion-ios-more,material:ion-android-more-vertical"></ons-icon>
-          </div>
-        </ons-list-item>
+       
     </div>
+ 
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+ 
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-auth.js"></script>
+<script src="firebase.js"></script>
+<script src="/structure/browse.js"></script>
 
     <ons-toast>
-      <div onclick="openPlayScreen()"><ons-icon size="20px" style="margin-right: 10px" icon="fa-angle-up"></ons-icon> Unknown Artist - Track 01 </div>
+      <div onclick="openPlayScreen6()"><ons-icon size="20px" style="margin-right: 10px" icon="fa-angle-up"></ons-icon> Unknown Artist -  01 ว่าด้วยเรื่อง "สุขภาพจิต"
+      </div>
       <button><ons-icon id="play_icon" size="20px" style="color: white;" icon="fa-play-circle-o" onclick="play_toggle(this.id)"></ons-icon></button>
     </ons-toast>
 
   </ons-page>
 </template>
 
+<!-- The PlayHealth Screen -->
+<template id="play6.html">
+  <ons-page id="play-page">
+    <ons-toolbar modifier="transparent">
+      <div class="left"><ons-toolbar-button id="back_button"><ons-icon style="color: white" icon="fa-angle-down"></ons-icon></ons-toolbar-button></div>
+      <div class="center" style="margin-top: -5px;">
+        <div style="font-size: 8px; height: 15px; color: #999;">PLAYING FROM ALBUM</div>
+        <div style="font-size: 12px;" id="from_playlist">Unknown Artist -  01 ว่าด้วยเรื่อง "สุขภาพจิต"</div>
+      </div>
+      <div class="right"><ons-toolbar-button><ons-icon style="color: white" icon="fa-bars"></ons-icon></ons-toolbar-button></div>
+    </ons-toolbar>
+
+    <div class="play_wrapper">
+      <div style="margin: 20px auto 20px; width: 85%">
+        <img style="width: 100%;" src="https://firebasestorage.googleapis.com/v0/b/meowcast-10d67.appspot.com/o/wallpaper%2Fex2.jpg?alt=media&token=19fd5d6c-7dec-466b-b4cf-9b142c458ab0">
+      </div>
+      <ons-row>
+        <ons-col  width="40px" class="function_icon"><ons-icon icon="ion-ios-plus-outline" style="font-size: 12px;"></ons-icon></ons-col>
+        <ons-col style="font-size: 12px; margin-bottom: 20px;">
+          <div><b> 01 ว่าด้วยเรื่อง "สุขภาพจิต"</b></div>
+          <div style="margin-top: 5px; color: #999;">Unknown Artist</div>
+        </ons-col>
+        <ons-col  width="40px" class="function_icon"><ons-icon icon="ion-more"></ons-icon></ons-col>
+      </ons-row>
+      <ons-row>
+        <div class="audio_play">
+          <audio controls="controls">
+         <source src="https://firebasestorage.googleapis.com/v0/b/meowcast-10d67.appspot.com/o/mp3%2F2.%E0%B8%A7%E0%B9%88%E0%B8%B2%E0%B8%94%E0%B9%89%E0%B8%A7%E0%B8%A2%20%E0%B8%AA%E0%B8%B8%E0%B8%82%E0%B8%A0%E0%B8%B2%E0%B8%9E%E0%B8%88%E0%B8%B4%E0%B8%95.mp3?alt=media&token=34dc4ee0-cd37-452a-b51d-de35b65b52e1" type="audio/mp3">
+
+        </audio>
+        </div>
+      </ons-row>
+      
+    </div>
+     
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+ 
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-auth.js"></script>
+<script src="firebase.js"></script>
+<script src="/structure/browse.js"></script>
+  </ons-page>
+</template>
 </body>
 </html>

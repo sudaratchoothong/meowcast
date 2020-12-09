@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>MEOWFLIX</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="onsenui.css">
+    <link rel="stylesheet" href="onsen-css-components.min.css">
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="/structure/browse.html">
+
+</head>
+
+<body>
+    <ons-icon icon="md-chevron-left" class="btnback" id="btn-back" size="55px"></ons-icon>
+    <div class="text-center Comfortaa">
+        <div>
+            <img src="" class="logo" width="40%" alt="" srcset="https://firebasestorage.googleapis.com/v0/b/meowcast-10d67.appspot.com/o/siled_show%2Flogo-meowcast.jpg?alt=media&token=f938c4f2-50f1-4671-86e5-1135ef2ad63d">
+        </div>
+        <div class="registerText">REGISTER</div>
+        <div class="form-group">
+            <input type="text" class="form-control" name="" id="name" placeholder="NAME">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" name="" id="email" placeholder="EMAIL">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" name="" id="password" placeholder="PASSWORD">
+        </div>
+        <div class="form-group">
+            <button type="button" id="signUp" class="btn-login btn-block btn-lg Kanit">SIGN UP</button>
+        </div>
+    </div>
+    </div>
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-auth.js"></script>
+    <script src="https://vjs.zencdn.net/8.1.2/video.js"></script>
+    <script src="onsenui.min.js"></script>
+    <script src="jquery-3.5.1.min.js"></script>
+    <script src="firebase.js"></script>
+    <script src="login.js"></script>
+</body>
+<script>
+    document.getElementById('browse').onclick = function () {
+        window.location.href = 'structure/browse.html'
+    }
+</script>
+</html>

@@ -1,4 +1,6 @@
+
 // Page init event
+
 
 var playlist;  // variable used to remember the name of the playlist being opened
 
@@ -15,7 +17,7 @@ document.addEventListener('init', function(event) {
       page.querySelector('#dot1').classList.toggle("circle_current");
       page.querySelector('#dot2').classList.toggle("circle_current");
     });
-
+    document.querySelector('ons-carousel').setAttribute('someAttribute', 'true')
   }
 
   if (page.matches('#play-page')) {
@@ -73,10 +75,51 @@ function shuffle_play() {
 function openPlayScreen() {
   document.querySelector('#navigator').pushPage('play.html', { animation: "lift" });
 }
+
+function openPlayScreen2() {
+  document.querySelector('#navigator').pushPage('play2.html', { animation: "lift" });
+}
+
+function openPlayScreen3() {
+  document.querySelector('#navigator').pushPage('play3.html', { animation: "lift" });
+}
+
+function openPlayScreen4() {
+  document.querySelector('#navigator').pushPage('play4.html', { animation: "lift" });
+}
+
+function openPlayScreen5() {
+  document.querySelector('#navigator').pushPage('play5.html', { animation: "lift" });
+}
+
+function openPlayScreen6() {
+  document.querySelector('#navigator').pushPage('play6.html', { animation: "lift" });
+}
+
 // Used to togle the play/paused icon on the play screen and the toast on the playlist page
 
 function play_toggle(id)　{
   document.getElementById(id).classList.toggle("fa-pause-circle-o");
   document.getElementById(id).classList.toggle("fa-play-circle-o"); 
 }
+
+window.fn = {};
+
+window.fn.open = function() {
+  var menu = document.getElementById('menu');
+  menu.open();
+};
+
+window.fn.load = function(page) {
+  var content = document.getElementById('content');
+  var menu = document.getElementById('menu');
+  content.load(page)
+    .then(menu.close.bind(menu));
+};
+window.fn = {};
+
+window.fn.open = function() {
+  var menu = document.getElementById('menu');
+  menu.open();
+};
 

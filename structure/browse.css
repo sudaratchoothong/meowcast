@@ -27,7 +27,7 @@
 
       .recomended {
         background: linear-gradient(rgb(208, 247, 211),#151715);
-        padding-top: 44px;
+        padding-top: 200px;
       }
 
       .menu_list {
@@ -84,7 +84,7 @@
       }
 
       .playlist_thumbnail {
-        width: 50%;
+        width: 100%;
         max-width: 145px;
       }
 
@@ -274,3 +274,9 @@
     background-color: #464646;
     box-shadow: inset 0 0 0 2px #636363;
   }
+ .audio_play{
+   text-align: center;
+   padding-left: 50px;
+ }
+
+ 
